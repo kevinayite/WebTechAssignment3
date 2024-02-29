@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admission</title>
+<link rel="stylesheet" href="Admission.css">
+</head>
+<body>
+
+	<div class="container">
+    <div class="header">
+        <h1 id="pageTitle">Student Admission Form</h1>
+    </div>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <label for="languageSelector">Choose Language:</label>
+        <select id="languageSelector" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="sw">Spanish</option>
+        </select>
+    </div>
+    <form class="form" action="submitAdmission" method="post" enctype="multipart/form-data">
+        <div class="form-control">
+            <label for="names">Names:</label>
+            <input id="names" type="text" name="names" required>
+        </div>
+        <div class="form-control">
+            <label for="dob">Date of Birth:</label>
+            <input id="dob" type="date" name="dob" required>
+        </div>
+        <div class="form-control">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="form-control">
+            <label for="department">Department:</label>
+            <input id="department" type="text" name="department" required>
+        </div>
+        <div class="form-control">
+            <label for="faculty">Faculty:</label>
+            <input id="faculty" type="text" name="faculty" required>
+        </div>
+        <div class="form-control">
+            <label for="passportNumber">Passport Number:</label>
+            <input id="passportNumber" type="text" name="passportNumber" required>
+        </div>
+        <div class="form-control">
+            <label for="phoneNumber">Phone Number:</label>
+            <input id="phoneNumber" type="text" name="phoneNumber" required>
+        </div>
+        <div class="form-control">
+            <label for="email">Email:</label>
+            <input id="email" type="email"  required>
+        </div>
+        <div class="form-control">
+            <label for="address">Address:</label>
+            <input id="address" type="text" name="address" required>
+        </div>
+        <div class="form-control">
+            <label for="parentsName">Parents Name:</label>
+            <input id="parentsName" type="text" name="parentsName" required>
+        </div>
+        <div class="form-control">
+            <label for="picture">Student Passport Picture (jpg or png):</label>
+            <input id="picture" type="file" name="picture" accept="image/jpeg, image/png" required>
+        </div>
+        <div class="form-control">
+            <label for="diploma">Certificates (Diploma) (PDF):</label>
+            <input id="diploma" type="file" name="diploma" accept="application/pdf" required>
+        </div>
+        <div class="form-control">
+            <!-- <input class="button" type="submit" value="Submit"> -->
+            <button type="submit" class="disable">Submit</button>
+        </div>
+    </form>
+</div>
+
+<!-- <script>
+    // Yandex Translate API integration for language translation
+    function translateText(text, lang) {
+        var apiKey = 'YOUR_YANDEX_TRANSLATE_API_KEY';
+        var url = 'https://translate.yandex.net/api/v1.5/tr.json/translate';
+        var data = {
+            key: apiKey,
+            text: text,
+            lang: lang
+        };
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Update the form labels with translated text
+            document.getElementById('pageTitle').textContent = data.text[0];
+            document.querySelectorAll('.form-control label').forEach((label, index) => {
+                label.textContent = data.text[index + 1];
+            });
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Translate form labels to the selected language
+    function changeLanguage() {
+        var selectedLanguage = document.getElementById("languageSelector").value;
+        translateText('Student Admission Form,Names,Date of Birth,Gender,Passport Number,Phone Number,Email,Address,Parents Name,Student Passport Picture (jpg or png),Certificates (Diploma) (PDF),Submit', selectedLanguage);
+    }
+</script> -->
+	
+</body>
+</html>

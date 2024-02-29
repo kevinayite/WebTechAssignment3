@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login </title>
+<link rel="stylesheet" href="style.css">
+<script src="https://kit.fontawesome.com/dd3a8b46f4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign In</h1>
+            
+            <form id="signInForm" action="login" method="post">
+                <div class="input-group">
+                	 
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Email" name="email" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" id="password" placeholder="Password" name="password" required>
+                    </div>
+
+                    <div class="btn-field">
+                        <button type="submit" id="signInButton" class="disable">Sign In</button>
+                         <button onclick="window.location.href='SignUp.html' ">Sign Up</button>
+                    </div>
+                    <br><br>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+
+<!--     <script>
+        let emailField = document.getElementById("email");
+        let passwordField = document.getElementById("password");
+        let signInButton = document.getElementById("signInButton");
+
+        signInButton.onclick = function () {
+            // Validate that both email and password are filled
+            if (emailField.value.trim() === '' || passwordField.value.trim() === '') {
+                alert("Please fill in both email and password fields");
+            } else {
+                // Your code to handle successful login
+                alert("Login successful!");
+            }
+        }
+    </script> -->
+
+</body>
+</html>
